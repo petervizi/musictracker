@@ -54,6 +54,7 @@ gboolean get_exaile_info(struct TrackInfo* ti);
 gboolean get_banshee_info(struct TrackInfo* ti);
 gboolean get_mpd_info(struct TrackInfo* ti);
 gboolean get_quodlibet_info(struct TrackInfo* ti);
+gboolean get_moc_info(struct TrackInfo* ti);
 
 void get_xmmsctrl_pref(GtkBox *box);
 void get_mpd_pref(GtkBox *box);
@@ -75,6 +76,7 @@ struct PlayerInfo g_players[] = {
 	{ "QuodLibet", get_quodlibet_info, 0 },
 	{ "MPD", get_mpd_info, get_mpd_pref },
 	{ "Exaile", get_exaile_info, 0 },
+	{ "MOC", get_moc_info, 0 },
 #else
 	{ "Winamp", get_winamp_info, 0 },
 	{ "Windows Media Player", get_wmp_info, 0 },
