@@ -2,8 +2,6 @@
 #include "utils.h"
 
 #include <string.h>
-#include <sys/socket.h>
-#include <sys/un.h>
 
 #define BUFF_SIZE 256
 
@@ -67,6 +65,7 @@ gboolean get_moc_info(struct TrackInfo* ti) {
 	if (strstr(pch, "http://") != NULL) {
 	    strcpy(ti->artist, pch);
 	    strcpy(ti->album, "Online Radio");
+	    ti->totalSecs = ti->currentSecs;
 	}
     }
     return TRUE;
